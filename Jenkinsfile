@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKERHUB_USERNAME="clinkratcheat"
-        APP_NAME="gitops-arco-app"
+        APP_NAME="cicd-app"
         IMAGE_TAG="${BUILD_NUMBER}"
         IMAGE_NAME="${DOCKERHUB_USERNAME}"+"/"+"${APP_NAME}"
         REGISTRY_CREDS='dockerhub'
@@ -19,7 +19,7 @@ pipeline {
             steps{
                 script{
                     git creadentialsId : 'github',
-                    url: 'https://github.com/jeet004a/EKS-CICD',
+                    url: 'https://github.com/jeet004a/AWS-CICD-Project.git',
                     branch: 'master'
                 }
             }
@@ -70,7 +70,7 @@ pipeline {
                         git commit -m "Update deployment file"
                     """
                     withCredentials([gitUsernamePassword(credentialsId: 'github', gitToolName: 'Default')]) {
-                        sh "git push https://github.com/jeet004a/EKS-CICD.git master" 
+                        sh "git push https://github.com/jeet004a/AWS-CICD-Project.git master" 
                     }
                 }
             }
