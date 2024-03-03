@@ -15,15 +15,15 @@ pipeline {
                  }
             }
         }
-        // stage('Checkout SCM'){
-        //     steps{
-        //         script{
-        //             git creadentialsId : 'github',
-        //             url: 'https://github.com/jeet004a/AWS-CICD-Project.git',
-        //             branch: 'master'
-        //         }
-        //     }
-        // }
+        stage('Checkout SCM'){
+            steps{
+                script{
+                    git creadentialsId : 'github',
+                    url: 'https://github.com/jeet004a/AWS-CICD-Project.git',
+                    branch: 'master'
+                }
+            }
+        }
         stage('Build Docker Image'){
             steps{
                 script{
