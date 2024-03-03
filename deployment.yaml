@@ -13,7 +13,7 @@ spec:
     spec:
       containers:
       - name: django-app-container
-        image: clinkratcheat/cicd-app:21
+        image: clinkratcheat/cicd-app:22
         resources:
           limits:
             memory: "128Mi"
