@@ -15,15 +15,15 @@ pipeline {
                  }
             }
         }
-        stage('Checkout SCM'){
-            steps{
-                script{
-                    git creadentialsId : 'github',
-                    url: 'https://github.com/jeet004a/AWS-CICD-Project.git',
-                    branch: 'master'
-                }
-            }
-        }
+        // stage('Checkout SCM'){
+        //     steps{
+        //         script{
+        //             git creadentialsId : 'github',
+        //             url: 'https://github.com/jeet004a/AWS-CICD-Project.git',
+        //             branch: 'master'
+        //         }
+        //     }
+        // }
         stage('Build Docker Image'){
             steps{
                 script{
@@ -79,4 +79,4 @@ pipeline {
     
 }
 
-//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
+//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
